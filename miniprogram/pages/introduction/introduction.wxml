@@ -1,0 +1,13 @@
+<view class="page__hd">
+  <view class="page__title">WE班团，致力于提供一个轻量级学生团体日历</view>
+  <view style="margin-top:20rpx;margin-bottom:30rpx;"><text class="author">WE班团开发者\t</text><text class="time">\t2020年6月13日</text></view>
+  <view class="page__desc">WE班团为学生等群体提供了一个轻量级的团体日历，通过输入班级和姓名加入即可进入团体并且接收团体的活动安排。对于只加入一个班级的用户来说，WE班团在一次输入之后可以自动登入班级日历界面，具有一定的便捷性。</view>
+  <view class="page__desc">WE班团是一个半开放的系统：任何用户都可以建立班级并管理班级成员；但是，这个平台无法与微信号相关联，这一定程度上满足了半开放的要求。</view>
+  <view class="page__desc">WE班团小程序不需要获取任何权限，用户的个人信息通过加密的openid进行存储，也就是说，平台和其他用户都不会了解您的微信信息。</view>
+  <view class="page__desc">您可以在WE班团小程序上添加个人活动，在添加个人活动时，您可以根据班级的周历进行添加，然而这些信息是以绝对的日期进行存储的，即使班级周历发生修改，您存储的个人活动依然可以对应到正确的时间。</view>
+  <view class="page__desc">当您加入多个WE班团团体时，WE班团为您提供了“全班级模式”的登录方式，这种模式下您能看到所有所在班级的活动和个人活动，但您无法编辑班级活动。</view>
+  <view class="page__desc">您可以选择游客模式进行登录，在这样的模式下您可以查看和编辑个人活动信息。游客模式和全班级模式下，周历为WE班团标准周历。</view>
+  <text style="line-height:7px;"></text>
+  <view class="page__desc">WE班团标准周历与清华大学校历保持同步，在创建班级时，您可以使用WE班团标准周历，这样系统将自动为这个班级更新周历。</view>
+  <image src="https://mmbiz.qpic.cn/mmbiz_png/bz1d0u9o51UcfZ9hJW5TGICUfXYE5w4IsaylYXibsgc56nib5h0x79FtxulMb7icdUfD6yWksaJNIVaaWlEnMUaHQ/0?wx_fmt=png" class="backpic"/>
+</view>

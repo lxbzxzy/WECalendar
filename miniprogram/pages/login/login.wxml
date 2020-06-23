@@ -1,0 +1,60 @@
+<view class="container">
+  <!--上半部分logo和欢迎词-->
+  <view class="upperpart">
+    <image class="about-banner" src="{{logo}}" mode="aspectFill"></image>
+    <view class="totalintro">
+      <view class="intro" class="welcome">欢迎来到WE班团</view>
+      <view class="learnMore" bindtap="checkInfo">点击了解WE班团的模式</view>
+    </view>  
+  </view>
+  <!--操作页面-->
+  <view class="lowerpart">
+    <view wx:if="{{state==0}}">
+      <image src="{{loadingPic}}"mode="aspectFill" class="loadingpic"></image>
+    </view>
+    <view wx:if="{{state==1}}">
+      <view class="logining">
+        <view>正在登录中...</view>
+        <view>班级：{{loginInfo[0].class}}</view>
+        <view>姓名：{{loginInfo[0].name}}</view>
+      </view>
+      <image src="{{loadingPic}}"mode="aspectFill" class="loadingpic2"></image>
+      <view class="logining">
+        <view>tips: 请不要把个人安排误发成团体安排哦</view>
+      </view>
+    </view>
+    <view wx:if="{{state==2}}">
+      <view class="beforeinput">请输入班级姓名加入</view><text bindtap="chooseState3" class="selectclass2login">选择班级登录</text>
+      <input class="input" placeholder="请输入班级" bindinput="inputClass"/>
+      <input class="input" placeholder="请输入姓名" bindinput="inputName" />
+      <view bindtap="login" class="passwordlogin">登录</view>
+      <view bindtap="visitorLogin" class="visitorlogin">游客模式</view>
+      <view bindtap="createClass" class="createclass">创建班级</view>
+      <view class="afterinput">
+        <view>Tips:</view>
+        <view>1. 在登录前请先向本班管理员确认已加入班级</view>
+        <view>2. 游客登录模式可进行个人活动安排，在加入班级之后这些安排依然保留</view>
+        <view>3. 创建班级功能对所有用户开放</view>
+      </view>
+    </view>
+    <view wx:if="{{state==3}}">
+      <view class="beforeinput">全班级模式</view>
+      <view class="afterinput2">
+        <view>Tip: 全班级模式可查看所有所在班级和个人的活动，但不能管理</view>
+      </view>
+      <view bindtap="allLogin" class="passwordlogin2">全班级模式</view>
+      <view bindtap="visitorLogin" class="visitorlogin2">游客模式</view>
+      <view bindtap="createClass" class="createclass2">创建班级</view>
+      <text class="beforeinput2">选择班级登录</text><text class="chooseOtherMode" bindtap="chooseState2">\t登录其他班级</text>
+      <view class="button" wx:if="{{loginInfo.length>=1}}" style="top:710rpx;left:90rpx" bindtap="chooseClass1">{{loginInfo[0].class}}</view>
+      <view class="button" wx:if="{{loginInfo.length>=2}}" style="top:710rpx;left:410rpx" bindtap="chooseClass2">{{loginInfo[1].class}}</view>
+      <view class="button" wx:if="{{loginInfo.length>=3}}" style="top:805rpx;left:90rpx" bindtap="chooseClass3">{{loginInfo[2].class}}</view>
+      <view class="button" wx:if="{{loginInfo.length>=4}}" style="top:805rpx;left:410rpx" bindtap="chooseClass4">{{loginInfo[3].class}}</view>
+      <view class="button" wx:if="{{loginInfo.length>=5}}" style="top:900rpx;left:90rpx" bindtap="chooseClass5">{{loginInfo[2].class}}</view>
+      <view class="button" wx:if="{{loginInfo.length>=6}}" style="top:900rpx;left:410rpx" bindtap="chooseClass6">{{loginInfo[3].class}}</view>
+    </view>
+  </view>
+  <view class="footing">
+    We班团，致力于提供一个轻量级学生团体日历
+  </view>
+</view>

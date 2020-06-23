@@ -1,0 +1,238 @@
+page{
+	background-image:url('https://mmbiz.qpic.cn/mmbiz_png/bz1d0u9o51UdnicicuR8bqjA0pVHICnWQP8icQLsnxfT52FEqU9xafzOTGUuzmWQcDwBibT5fRibJXicmu65KD5sDSVw/0?wx_fmt=png');
+	background-size:100% 100%;
+  background-position:fixed;
+}
+
+.upper{
+	display:block;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin:50rpx;
+	width:650rpx;
+	border-radius:5%;
+	height:250rpx;
+}
+
+.classImage{
+	height:150rpx;
+	width:150rpx;
+	left:240rpx;
+	top:50rpx;
+	position:absolute;
+	border: 3px solid #fff;  
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+	display:block;
+}
+
+.avatar{    
+  width: 150rpx;  
+  height: 150rpx;  
+  border: 3px solid #fff;  
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+	display:block;
+}
+
+.userInfo{
+	position:absolute;
+	display:block;
+	left:450rpx;
+	width:280rpx;
+	top:65rpx;
+	font-size:40rpx;
+	font-weight:bold;
+}
+
+.addMyCalendar{
+	position:absolute;
+	display:block;
+	text-align:center;
+	top:230rpx;
+	width:162rpx;
+	left:50rpx;
+	font-size:35rpx;
+	font-weight:bold;
+	color:rgb(80, 24, 145);
+}
+
+.canadmin{
+	position:absolute;
+	display:block;
+	text-align:center;
+	top:230rpx;
+	left:212rpx;
+	width:162rpx;
+	font-size:35rpx;
+	font-weight:bold;
+	color:rgb(80, 24, 145);
+}
+
+.cannotadmin{
+	position:absolute;
+	display:block;
+	text-align:center;
+	top:230rpx;
+	left:212rpx;
+	width:162rpx;
+	font-size:35rpx;
+	font-weight:bold;
+	color:rgb(118, 118, 118);
+}
+
+.relogin{
+	position:absolute;
+	display:block;
+	text-align:center;
+	top:230rpx;
+	left:375rpx;
+	width:162rpx;
+	font-size:35rpx;
+	font-weight:bold;
+	color:rgb(80, 24, 145);
+}
+
+.debind{
+	position:absolute;
+	display:block;
+	text-align:center;
+	top:230rpx;
+	left:537rpx;
+	width:162rpx;
+	font-size:35rpx;
+	font-weight:bold;
+	color:rgb(145, 42, 24);
+}
+
+.debind2{
+	position:absolute;
+	display:block;
+	text-align:center;
+	top:230rpx;
+	left:537rpx;
+	width:162rpx;
+	font-size:35rpx;
+	font-weight:bold;
+	color:rgb(118, 118, 118);
+}
+
+.middle{
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin:50rpx;
+	width:650rpx;
+	border-radius:5%;
+	top:300rpx;
+}
+
+.introdate{
+	font-size:30rpx;
+	text-align: center;
+	margin-bottom:10rpx;
+}
+
+.midtitle{
+	font-size:35rpx;
+	padding-top:20rpx;
+	text-align: center;
+	font-weight: bold;
+}
+
+.calendarloading{
+	font-size:30rpx;
+	color:lightgrey;
+	line-height:200rpx;
+	margin-left:225rpx;
+}
+
+.calendarItself{
+	margin:3rpx;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.month2{
+	font-size: 30rpx;
+  color: grey;
+  width:80rpx;
+  text-align: center;
+  border:1rpx solid floralwhite;
+}
+
+.day{
+	font-size: 30rpx;
+  color: grey;
+  width:79rpx;
+  text-align: center;
+  border:1rpx solid floralwhite;
+}
+
+.month{
+	font-size: 30rpx;
+  color: grey;
+	width:80rpx;
+	height:70rpx;
+	line-height: 70rpx;
+  text-align: center;
+  border:1rpx solid floralwhite;
+}
+
+.date{
+	align-items:center;
+	font-size: 35rpx;
+	width:79rpx;
+	height:70rpx;
+	line-height: 70rpx;
+  text-align: center;
+  border:1rpx solid floralwhite;
+}
+
+.selected{
+	align-items:center;
+	font-size: 35rpx;
+	width:79rpx;
+	height:70rpx;
+	line-height: 70rpx;
+  text-align: center;
+  border:1rpx solid rgb(78, 116, 142);
+}
+
+.downpart{
+	background-color: rgba(255, 255, 255, 0.5);
+	margin:50rpx;
+	width:650rpx;
+	border-radius:5%;
+	display:block;
+}
+
+.total{
+  margin:30rpx;
+  border:4rpx solid lightgray;
+  background-color:rgba(202, 227, 235, 0.2);
+  display: flex;
+  flex-direction: row;
+}
+
+.left{
+	width:420rpx;
+	font-size:30rpx;
+	margin:5rpx;
+}
+
+.right{
+	border-left:1rpx solid lightgrey;
+	width:155rpx;
+	font-size:30rpx;
+	margin:5rpx;
+	text-align: right;
+}
+
+.introdate2{
+	margin:30rpx;
+	padding-bottom:30rpx;
+  font-size:30rpx;
+  text-align: center;
+  color:darkgrey;
+}
+
+.checkbox{
+	font-size: 30rpx;
+	padding-left:25rpx;
+}

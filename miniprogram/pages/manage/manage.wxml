@@ -1,0 +1,62 @@
+<view>  
+  <view class="upperpart">
+    <image class="about-banner" src="{{classPic}}" mode="aspectFill"></image>
+    <view class="totalintro">
+      <view class="welcome">{{className}}</view>
+      <view class="learnMore" bindtap="modifyClassPic">修改班徽图片（上传班徽时，请先将其裁剪成正方形再上传）</view>
+    </view>  
+  </view>
+  <view class="comptitle">编辑班级活动</view>
+  <view class="btn-area">
+    <button class="button" bindtap="addActivity">添加班级活动</button>
+  </view>
+
+  <view class="comptitle">添加班级成员</view>
+  <image src="{{loadingPic}}" wx:if="{{state==0}}" mode="aspectFill" class="loadingpic2"/>
+  <view class="weui-cells__title" wx:if="{{state==1}}">请输入姓名（6字以内）并选择是否设置为管理员</view>
+  <view class="addStu" wx:if="{{state==1}}">
+    <input class="input" placeholder="请输入姓名" bindinput="inputName"/>
+    <checkbox checked="{{canAdmin}}" bindtap="checkboxChange" class="checkbox">设置为管理员</checkbox>
+  </view>
+  <view class="btn-area" wx:if="{{state==1}}">
+    <button class="button" bindtap="addStudent">添加学生</button>
+  </view>
+
+  <view class="comptitle">管理班级成员</view>
+  <view class="classmate" wx:if="{{state==1}}">
+    <view wx:for="{{classMate}}" wx:key="classmate">
+      <view class='item'>
+        <view class="name">{{item.name}}</view>
+        <view wx:if="{{item.canAdmin}}" class="admin">管理员</view>
+        <view wx:if="{{!item.canAdmin}}" class="setadmin" bindtap="setAdmin" data-index="{{index}}">设为管理员</view>
+        <view class="deleteStudent" bindtap="deleteStudent" data-index="{{index}}">注销用户</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{state==1}}">
+  <view class="comptitle">修改班级周历</view>
+  <checkbox checked="{{std}}" bindtap="checkboxChange2" class="checkbox2">WE班团标准周历</checkbox>
+  <view class="weui-cells__title" wx:if="{{!std}}">请输入学期名称（8字以内）</view>
+  <view class="weui-cells weui-cells_after-title" wx:if="{{!std}}">
+    <view class="weui-cell">
+      <input class="weui-input" bindinput="inputTerm" placeholder="{{inputTerm}}" maxlength='8' />
+    </view>
+  </view>
+	<view class="weui-cells__title" wx:if="{{!std}}">请选择学期开始时间（请选择周一的时间，如果开始日期不是周一，系统会以该日期所在周的周一为周历第一周周一）</view>
+  <view class="weui-cells weui-cells_after-title" wx:if="{{!std}}">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{date}}" start="2020-03-01" end="2030-12-31" bindchange="bindDateChange">
+          <view class="weui-select">当前选择: {{date}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="btn-area">
+    <button class="button" bindtap="updateCalendar">修改班级周历</button>
+  </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,101 @@
+<view>
+	<!--基础部分，个人信息和一些按钮-->
+	<view class="upper">
+		<view class="avatar"><open-data type="userAvatarUrl"/></view>
+		<image class="classImage" wx:if="{{state!=2}}" src="{{loadingPic}}"/>
+		<image class="classImage" wx:if="{{state==2}}" src="{{classPic}}"/>
+		<view class="userInfo">
+			<view>{{globalData.userInfo.class}}</view>
+			<view>{{globalData.userInfo.name}}</view>
+		</view>
+		<view class="addMyCalendar" bindtap="addMyCalendar">
+			<view>个人活动</view>
+		</view>
+		<view>
+			<view wx:if="{{globalData.userInfo.canAdmin&&state==2}}" bindtap="manageClass" class="canadmin">管理班级</view>
+			<view wx:if="{{!globalData.userInfo.canAdmin||state!=2}}" class="cannotadmin">管理班级</view>
+		</view>
+		<view class="relogin" bindtap="relogin">重新登录</view>
+		<view class="debind" bindtap="debind" wx:if="{{mode==0}}">解除绑定</view>
+    <view class="debind2" wx:if="{{mode==1}}">解除绑定</view>
+	</view>
+	<!--日历部分-->
+	<view class="middle">
+		<view class="midtitle">日历模式</view>
+		<view class="introdate">今天是{{globalData.term}}第{{globalData.week-globalData.timeZone}}周周{{dayTrans}}</view>
+
+    <!--日历本体-->
+    <view class="calendarloading" wx:if="{{state<1}}">正在加载中，请稍后</view>
+  	<view class="calendarItself" wx:if="{{state>=1}}">
+    	<view style="display:flex;flex-direction:row;" bindtap="returnBack">
+      	<view class="month2">date</view>
+      	<view wx:for="{{['Mon.','Tue.','Wed.','Thu.','Fri.','Sat.','Sun.']}}" wx:key="item" class="day" >{{item}}</view>
+    	</view>
+    	<view bindtap="changeWeekShown" data-index="{{index}}" wx:for="{{dealtCalendar}}" wx:key="week">
+        <view style="display:flex;flex-direction:row;">
+      	  <view class="month" bindtap="returnBack">{{item[0].month}}</view>
+      	  <view wx:for="{{item}}" wx:key="date">
+          <view wx:if="{{item.week==selectedWeek&&item.day==selectedDay}}" class="selected">
+            <view bindtap="changeDayShown" data-index="{{index}}">
+              <view wx:if="{{item.pastTimeCode>0}}" style="background-color:{{colorSet[item.activityCode]}}"><view style="color:{{colorSet2[item.pastTimeCode]}}">{{item.date}}</view></view>
+              <view wx:if="{{item.pastTimeCode==0}}" style="background-color:{{colorSet3[item.activityCode]}}"><view style="color:{{colorSet2[item.pastTimeCode]}}">{{item.date}}</view></view>
+            </view>
+          </view>
+          <view wx:if="{{item.week!=selectedWeek||item.day!=selectedDay}}" class="date">
+            <view bindtap="changeDayShown" data-index="{{index}}">
+              <view wx:if="{{item.pastTimeCode>0}}" style="background-color:{{colorSet[item.activityCode]}}"><view style="color:{{colorSet2[item.pastTimeCode]}}">{{item.date}}</view></view>
+              <view wx:if="{{item.pastTimeCode==0}}" style="background-color:{{colorSet3[item.activityCode]}}"><view style="color:{{colorSet2[item.pastTimeCode]}}">{{item.date}}</view></view>
+            </view>
+          </view>
+          </view>
+        </view>
+      </view>  
+    </view>
+    <view style="line-height:20rpx;color:rgba(0,0,0,0)">1</view>
+	</view>
+  <!--任务列表-->
+  <view class="downpart">
+    <view class="midtitle">列表模式</view>
+    <checkbox checked="{{selectedWeek==-1&&selectedDay==-1}}" bindtap="checkboxChange" class="checkbox" wx:if="{{state>=1}}">显示全部活动</checkbox>
+    <view wx:for="{{dealtSheet}}" wx:key="sheet" wx:if="{{state>=1}}">
+      <view wx:if="{{item.pastTimeCode!=0&&(((item.week==selectedWeek)&&(item.day==selectedDay))||(selectedWeek==-1&&selectedDay==-1))}}">
+        <view class="total">
+          <view class="left">
+            <text style="color:{{colorSet4[item.directionCode]}};font-weight:bold;" wx:if="{{item.directionCode==1}}">个人{{modeSet[item.modeCode-1]}}\t{{item.name}}</text> 
+            <text style="color:{{colorSet4[item.directionCode]}};font-weight:bold;" wx:if="{{item.directionCode==0}}">{{item.classDetail}}{{modeSet[item.modeCode-1]}}\t{{item.name}}</text>  
+            <view>
+              <text style="font-weight:bold;">时间\t</text><text>第{{item.week-globalData.timeZone}}周{{item.timeCode}}</text>
+            </view>  
+            <view><text style="font-weight:bold;">详情\t</text><text>{{item.detail}}</text></view>
+          </view>
+          <view class="right">
+            <view style="color:{{colorSet5[item.pastTimeCode]}};">{{pastTimeSet[item.pastTimeCode]}}</view>
+            <view style="color:rgb(80,7,120);text-decoration:underline" bindtap="generatePoster" data-index="{{index}}">生成海报</view>
+            <text bindtap="deleteActivity" data-index="{{index}}"  style="color:rgb(139,0,18);text-decoration:underline" wx:if="{{item.directionCode==1||globalData.canAdmin}}">删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:for="{{dealtSheet}}" wx:key="sheet" wx:if="{{state>=1}}">
+      <view wx:if="{{item.pastTimeCode==0&&(((item.week==selectedWeek)&&(item.day==selectedDay))||(selectedWeek==-1&&selectedDay==-1))}}">
+        <view class="total">
+          <view class="left">
+            <text style="color:grey;font-weight:bold;" wx:if="{{item.directionCode==1}}">个人{{modeSet[item.modeCode-1]}}\t{{item.name}}</text> 
+            <text style="color:grey;font-weight:bold;" wx:if="{{item.directionCode==0}}">{{item.classDetail}}{{modeSet[item.modeCode-1]}}\t{{item.name}}</text>      
+            <view>
+              <text style="font-weight:bold;color:grey;">时间\t</text><text style="color:grey">第{{item.week-globalData.timeZone}}周{{item.timeCode}}</text>
+            </view>  
+            <view><text style="font-weight:bold;color:grey">详情\t</text><text style="color:grey">{{item.detail}}</text></view>
+          </view>
+          <view class="right">
+            <view style="color:{{colorSet5[item.pastTimeCode]}};">{{pastTimeSet[item.pastTimeCode]}}</view>
+            <view style="color:rgb(80,7,120);text-decoration:underline" bindtap="generatePoster" data-index="{{index}}">生成海报</view>
+            <text bindtap="deleteActivity" data-index="{{index}}"  style="color:rgb(139,0,18);text-decoration:underline" wx:if="{{item.directionCode==1||globalData.canAdmin}}">删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="introdate2">以上是这一时段的所有活动信息</view>
+  </view>
+
+</view>

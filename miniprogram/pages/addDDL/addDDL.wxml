@@ -1,0 +1,79 @@
+<view class="page">
+<view class="page__bd" wx:if="{{mode=='add'}}">
+
+  <view class="page__hd" wx:if="{{direction=='me'}}">
+    <view class="page__title">添加个人活动</view>
+    <view class="page__desc">提示：</view>
+    <view class="page__desc">1. 个人活动只对用户自己显示，不受班级账号影响。</view><view class="page__desc">2. 个人活动的时间请用当前周历表示，如果班级修改周历，系统将自动为您更正。</view><view class="page__desc">3. 为便于展示，请将标题限制在8字以内，将内容限制在30字以内。</view>
+  </view>
+
+  <view class="page__hd" wx:if="{{direction!='me'}}">
+    <view class="page__title">添加班级活动</view>
+    <view class="page__desc">提醒：班级活动对班级内所有同学显示，请注意不要把个人活动设置成班级活动</view>
+  </view>
+
+  <view class="weui-cells__title">请选择模式</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd"> 
+        <picker bindchange="bindModeChange" value="{{modeIndex}}" range="{{modeArray}}">
+          <view class="weui-select"><view class="strongheight">当前选择：{{modeContent}}</view></view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells__title">请输入标题（8字以内）</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <input class="weui-input" bindinput="inputTitle" placeholder="{{inputTitle}}" maxlength='8' />
+    </view>
+  </view>
+
+  <view class="weui-cells__title">请输入内容（30字以内）</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <input class="weui-input" bindinput="inputContent" placeholder="{{inputContent}}" maxlength='30'/>
+    </view>
+  </view>
+
+  <view class="weui-cells__title">
+    <view>请选择周次、日期和时间</view>
+    <view>{{intro}}</view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd"> 
+        <picker bindchange="bindWeekChange" value="{{weekIndex}}" range="{{weekArray}}">
+          <view class="weui-select">当前选择：{{weekArray[weekIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd"> 
+        <picker bindchange="bindDayChange" value="{{dayIndex}}" range="{{dayArray}}">
+          <view class="weui-select">当前选择：{{dayArray[dayIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd"> 
+        <picker bindchange="bindTimeChange" value="{{timeIndex}}" range="{{timeArray}}">
+          <view class="weui-select">当前选择：{{timeArray[timeIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="btn-area">
+    <button class="button" bindtap="submit">添加活动</button>
+  </view>
+
+</view>
+</view>

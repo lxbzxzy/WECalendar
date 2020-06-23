@@ -1,0 +1,38 @@
+<view>
+	<view class="page__hd">
+    <view class="page__title">海报样式选择</view>
+    <view class="page__desc">你将要生成的海报的内容为：</view>
+    <view class="page__desc">{{content.parta}}</view>
+    <view class="page__desc">{{content.partb}}</view>
+    <view class="page__desc">{{content.partc}}</view>
+    <view class="page__desc">{{content.partd}}</view>
+    <view class="page__desc">{{content.parte}}</view>
+    <view class="page__desc">{{content.partf}}{{content.partg}}{{content.parth}}</view>
+  </view>
+  <image src="https://mmbiz.qpic.cn/mmbiz_png/bz1d0u9o51UdnicicuR8bqjA0pVHICnWQP6mqw1GAHTSBuicySXN23bA5lIvtrDKLfBfZ5FKNfw2yaZqBeFiaqcibMg/0?wx_fmt=png" mode="aspectFit" class="shownpic"/>
+	<view class="weui-cells__title">请选择海报样式</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd"> 
+        <picker bindchange="bindModeChange" value="{{chosenIndex}}" range="{{modeArray}}">
+          <view class="weui-select">当前选择：{{modeArray[chosenIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <button bindtap="generate" class="poster" style="margin-left:125rpx;width:500rpx;margin-top:30rpx; margin-bottom:30rpx;">生成海报</button>
+  <button bindtap="quit" class="returnback" style="margin-left:125rpx;width:500rpx;margin-top:30rpx; margin-bottom:30rpx;">返回</button>
+    
+
+  <view class='imagePathBox' hidden="{{maskHidden == true}}">
+  </view>
+  <cover-view class='baocun' bindtap='baocun' hidden="{{maskHidden == true}}">保存到相册</cover-view>
+  <cover-view class='baocun2' bindtap='baocun2' hidden="{{maskHidden == true}}">返回</cover-view> 
+  <view class="canvas-box" hidden="{{maskHidden == true}}">
+		<canvas canvas-id="myCanvas" style="width:650rpx;height:1052rpx;position:absolute;left:50rpx;top:50rpx;z-index:2"></canvas>
+  </view>
+
+</view>  
+
+
+

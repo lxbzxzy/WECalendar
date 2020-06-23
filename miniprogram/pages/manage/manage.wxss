@@ -1,0 +1,140 @@
+page{
+  background-color: #f6f6f6;
+}
+
+.upperpart{
+  width:650rpx;
+  margin:50rpx;
+  display:flex;
+  flex-direction: row;
+  background-color: rgba(255,255,255,0.5);
+  border-radius:5%;
+}
+
+.loadingpic{
+  margin:200rpx;
+  width:250rpx;
+  height:250rpx;
+  border-radius: 50%;
+}
+
+.about-banner{
+  width: 200rpx;  
+  height: 200rpx;
+  
+  border: 2px solid #fff;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.totalintro{
+  margin:0rpx 30rpx;
+  width:390rpx;
+}
+
+.welcome{
+  margin:15rpx 0rpx;
+  font-size:40rpx;
+  font-weight:bold;
+}
+
+.learnMore{
+  color:#0066cc;
+  font-size:30rpx;
+  margin:15rpx 0rpx;
+  text-decoration:underline;
+}
+
+.comptitle{
+  margin:15rpx 30rpx;
+  font-size:38rpx;
+  font-weight:bold;
+}
+
+.button{
+  width:550rpx;
+  margin-left:100rpx;
+  margin-right:100rpx;
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+  background-color: #ffffff;
+  color:#711d82;
+  font-weight: bold;
+  font-size:40rpx;
+}
+
+.loadingpic2{
+  margin:50rpx 200rpx 50rpx 200rpx;
+  width:250rpx;
+  height:250rpx;
+}
+
+.addStu{
+  flex-direction: row;
+  margin:10rpx 30rpx;
+  width:690rpx;
+  height:70rpx;
+}
+
+.input{
+  width:300rpx;
+  background-color: white;
+  border-radius: 5rpx;
+  line-height: 120rpx;
+  font-size: 35rpx;
+  position:absolute;
+}
+
+.checkbox{
+	font-size: 30rpx;
+  padding-left:25rpx;
+  width:300rpx;
+  height:120rpx;
+  position:absolute;
+  left:350rpx;
+}
+
+.checkbox2{
+	font-size: 30rpx;
+	padding-left:25rpx;
+}
+
+.classmate{
+  width:690rpx;
+  margin:30rpx;
+  background-color: white;
+  border-radius: 3rpx;
+  border:2rpx solid lightgrey;
+}
+
+.item{
+  display:flex;
+  flex-direction: row;
+  margin:5rpx 30rpx;
+  border-bottom:2rpx solid snow;
+  height:55rpx;
+}
+
+.name{
+  width:250rpx;
+  font-size: 32rpx;
+}
+
+.admin{
+  color:rgb(42, 1, 59);
+  width:200rpx;
+  font-size: 32rpx;
+}
+
+.setadmin{
+  color:#0066cc;
+  width:200rpx;
+  text-decoration: underline;
+  font-size: 32rpx;
+}
+
+.deleteStudent{
+  width:200rpx;
+  font-size: 32rpx;
+  text-decoration: underline;
+  color:rgb(139,0,18);
+}

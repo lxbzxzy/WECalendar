@@ -1,0 +1,267 @@
+page{
+  height:100%;
+  background-image:url('https://mmbiz.qpic.cn/mmbiz_png/bz1d0u9o51UdnicicuR8bqjA0pVHICnWQP8icQLsnxfT52FEqU9xafzOTGUuzmWQcDwBibT5fRibJXicmu65KD5sDSVw/0?wx_fmt=png');
+  background-size:100% 100%;
+  background-position:fixed;
+}
+
+.container{
+  top:0rpx;left:0rpx;right:0rpx;bottom:0rpx;
+  position:fixed;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  display: flow;
+}
+
+.totalintro{
+  margin:30rpx;
+}
+
+.upperpart{
+  position:fixed;
+  width:650rpx;
+  left:50rpx;
+  top:50rpx;
+  display:flex;
+  flex-direction: row;
+  background-color: rgba(255,255,255,0.5);
+  border-radius:5%;
+}
+
+.lowerpart{
+  position:fixed;
+  width:650rpx;
+  left:50rpx;
+  top:350rpx;
+  background-color: rgba(255,255,255,0.5);
+  border-radius:5%;
+  height:650rpx;
+}
+
+.about-banner{
+  overflow:hidden;  
+  display: block;  
+  width: 250rpx;  
+  height: 250rpx;
+  
+  border: 2px solid #fff;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.loadingpic{
+  margin:200rpx;
+  width:250rpx;
+  height:250rpx;
+  border-radius: 50%;
+}
+
+.welcome{
+  margin:15rpx 0rpx;
+  font-size:40rpx;
+  font-weight:bold;
+}
+
+.learnMore{
+  color:#0066cc;
+  font-size:30rpx;
+  margin:15rpx 0rpx;
+  text-decoration:underline;
+}
+
+.input{
+  background-color:snow;
+  margin:30rpx;
+  border-radius:3%;
+  height:50rpx;
+}
+
+.logining{
+  color:#2f2f2f;
+  align-items:block;
+  margin:15rpx 0rpx 35rpx 0rpx;
+  text-align:center;
+  height:100rpx;
+  font-size:35rpx;
+}
+
+.loadingpic2{
+  margin:50rpx 200rpx 50rpx 200rpx;
+  width:250rpx;
+  height:250rpx;
+  border-radius: 50%;
+}
+
+.beforeinput{
+  height:50rpx;
+  font-size:35rpx;
+  margin:30rpx;
+  font-weight:bold;
+}
+
+.passwordlogin{
+  background-color: #ffcccc;
+  
+  color:#0f0f0f;
+  font-size:35rpx;
+  text-align:center;
+  position:fixed;
+  top:630rpx;
+  left:80rpx;
+  width:170rpx;
+  height:80rpx;
+  border-radius:40rpx;
+  line-height:80rpx;
+  border:3rpx solid lightgrey;
+}
+
+.visitorlogin{
+  background-color: #ccccff;
+  
+  color:#0f0f0f;
+  font-size:35rpx;
+  text-align:center;
+  position:fixed;
+  top:630rpx;
+  left:290rpx;
+  width:170rpx;
+  height:80rpx;
+  border-radius:40rpx;
+  line-height:80rpx;
+  border:3rpx solid lightgrey;
+}
+
+.createclass{
+  background-color: #ccecff;
+  
+  color:#0f0f0f;
+  font-size:35rpx;
+  text-align:center;
+  position:fixed;
+  top:630rpx;
+  left:500rpx;
+  width:170rpx;
+  height:80rpx;
+  border-radius:40rpx;
+  line-height:80rpx;
+  border:3rpx solid lightgrey;
+}
+
+.afterinput{
+  position:fixed;
+  top:740rpx;
+  margin-left:30rpx;
+  font-size:30rpx;
+  width:590rpx;
+  line-height:40rpx;
+}
+
+.footing{
+  position:fixed;
+  height:100rpx;
+  width:750rpx;
+  bottom:0rpx;
+  font-size:25rpx;
+  text-align: center;
+  color:darkgrey;
+}
+
+.afterinput2{
+  position:fixed;
+  top:440rpx;
+  margin-left:30rpx;
+  font-size:30rpx;
+  width:590rpx;
+  line-height:40rpx;
+}
+
+.passwordlogin2{
+  background-color: #ffcccc;
+  
+  color:#0f0f0f;
+  font-size:35rpx;
+  text-align:center;
+  position:fixed;
+  top:530rpx;
+  left:75rpx;
+  width:205rpx;
+  height:80rpx;
+  border-radius:40rpx;
+  line-height:80rpx;
+  border:3rpx solid lightgrey;
+}
+
+.visitorlogin2{
+  background-color: #ccccff;
+  
+  color:#0f0f0f;
+  font-size:35rpx;
+  text-align:center;
+  position:fixed;
+  top:530rpx;
+  left:310rpx;
+  width:165rpx;
+  height:80rpx;
+  border-radius:40rpx;
+  line-height:80rpx;
+  border:3rpx solid lightgrey;
+}
+
+.createclass2{
+  background-color: #ccecff;
+  
+  color:#0f0f0f;
+  font-size:35rpx;
+  text-align:center;
+  position:fixed;
+  top:530rpx;
+  left:505rpx;
+  width:165rpx;
+  height:80rpx;
+  border-radius:40rpx;
+  line-height:80rpx;
+  border:3rpx solid lightgrey;
+}
+
+.beforeinput2{
+  position:fixed;
+  top:610rpx;
+  height:50rpx;
+  font-size:35rpx;
+  margin:30rpx;
+  font-weight:bold;
+}
+
+.button{
+  background-color: #f6f6f6;
+  color:#711d82;
+  font-size:35rpx;
+  text-align:center;
+  position:fixed;
+  width:250rpx;
+  height:75rpx;
+  font-weight: bold;
+  border-radius:10rpx;
+  line-height:80rpx;
+  border:3rpx solid lightgrey;
+}
+
+.chooseOtherMode{
+  position:fixed;
+  top:645rpx;
+  height:50rpx;
+  left:300rpx;
+  font-size: 30rpx;
+  text-decoration: underline;
+  color:#0066cc;
+}
+
+.selectclass2login{
+  position:fixed;
+  top:385rpx;
+  height:50rpx;
+  left:400rpx;
+  font-size: 30rpx;
+  text-decoration: underline;
+  color:#0066cc;
+}

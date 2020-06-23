@@ -1,0 +1,54 @@
+<view class="page">
+<view class="page__bd">
+
+  <view class="page__hd">
+    <view class="page__title">创建班级</view>
+    <view class="page__desc">提示：</view>
+    <view class="page__desc">1. 若上传班级班徽，请先将其裁剪成正方形上传，否则在显示时会出现问题。如果不上传班徽，班级成员登录时将显示WE班团标志</view><view class="page__desc">2. WE班团标准周历与清华大学校历保持一致，如若采用，系统将自动为您更新周历。</view>
+  </view>
+
+  <view class="weui-cells__title">请输入班名（6字以内）</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <input class="weui-input" bindinput="inputTitle" placeholder="{{inputTitle}}" maxlength='6' />
+    </view>
+  </view>
+
+	<view class="weui-cells__title">请输入创建者您的名字（6字以内）</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <input class="weui-input" bindinput="inputName" placeholder="{{inputName}}" maxlength='6' />
+    </view>
+  </view>
+
+	<view class="weui-cells__title">请上传班徽（可选）</view>
+	<view bindtap="upload" class="upload">
+		<text wx:if="{{classPicSrc.length<=5}}" bindtap="upload">点击上传</text>
+		<text wx:if="{{classPicSrc.length>5}}">已上传</text>
+	</view>
+
+	<view class="weui-cells__title">请设置周历</view>
+	<checkbox checked="{{std}}" bindtap="checkboxChange" class="checkbox">WE班团标准周历</checkbox>
+	<view class="weui-cells__title" wx:if="{{!std}}">请输入学期名称（8字以内）</view>
+  <view class="weui-cells weui-cells_after-title" wx:if="{{!std}}">
+    <view class="weui-cell">
+      <input class="weui-input" bindinput="inputTerm" placeholder="{{inputTerm}}" maxlength='8' />
+    </view>
+  </view>
+	<view class="weui-cells__title" wx:if="{{!std}}">请选择学期开始时间（请选择周一的时间，如果开始日期不是周一，系统会以该日期所在周的周一为周历第一周周一）</view>
+  <view class="weui-cells weui-cells_after-title" wx:if="{{!std}}">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{date}}" start="2020-03-01" end="2030-12-31" bindchange="bindDateChange">
+          <view class="weui-select">当前选择: {{date}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="btn-area">
+    <button class="button" bindtap="submit">创建班级</button>
+  </view>
+
+</view>
+</view>
